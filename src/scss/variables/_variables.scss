@@ -1,0 +1,24 @@
+// Colors
+$colorPrimary: #3d5bf0;
+$colorLightPrimary: #e4e8ff;
+$colorSecondary: #c8495f;
+$colorFont: #999898;
+// Font-Size
+$f1: 2.25em;
+$f2: 1.875em;
+$f3: 1.5em;
+$f4: 1.313em;
+$f5: 1.125em;
+$f6: 1em;
+
+// Break Points
+$breakpoints-up: (
+  "medium": "40em",
+  "large": "64em",
+  "xlarge": "87.5em",
+);
+$breakpoints-down: (
+  "small": "39.9375em",
+  "medium": "63.9375em",
+  "xlarge": "87.4375em",
+);

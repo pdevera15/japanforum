@@ -1,0 +1,14 @@
+@import "normalize.scss";
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap");
+
+* {
+  font-family: "Lato", sans-serif;
+  font-size: $f6;
+  color: $colorFont;
+}
+
+a,
+a:visited,
+a:hover {
+  text-decoration: none;
+}

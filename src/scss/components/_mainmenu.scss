@@ -1,0 +1,38 @@
+.mainmenu {
+  min-width: 250px;
+  font-weight: bold;
+
+  &__title {
+    margin-bottom: 0.8em;
+    padding: 0.8em 0.8em 0.8em 3em;
+  }
+
+  &__links {
+    a {
+      display: block;
+      padding: 0.8em 0.8em 0.8em 3em;
+
+      &:hover {
+        color: $colorPrimary;
+      }
+    }
+  }
+
+  .active {
+    background-color: $colorLightPrimary;
+    position: relative;
+    color: $colorPrimary;
+    font-weight: bold;
+
+    &:before {
+      content: "";
+      width: 3px;
+      height: 100%;
+      background-color: $colorPrimary;
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  }
+}
