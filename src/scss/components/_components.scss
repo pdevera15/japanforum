@@ -1,0 +1,37 @@
+@import "header", "mainmenu", "topiclist", "arrowstatus";
+.button {
+  padding: 0.8em;
+  border-radius: 2em;
+  color: #fff;
+
+  &--signup {
+    background-color: $colorPrimary;
+  }
+}
+
+.container {
+  padding: 0 10%;
+  display: flex;
+  justify-content: space-between;
+
+  &--topic {
+    justify-content: flex-start;
+    padding: 3.5em 0em;
+  }
+
+  @include breakpoint-down(medium) {
+    padding: 0;
+  }
+}
+
+.hide-for-desktop {
+  @include breakpoint-up(large) {
+    display: none;
+  }
+}
+
+.hide-for-mobile {
+  @include breakpoint-down(medium) {
+    display: none;
+  }
+}
