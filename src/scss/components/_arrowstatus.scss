@@ -4,6 +4,13 @@
   font-size: $f4;
   max-width: 50px;
   align-items: center;
+
+  button {
+    &:hover {
+      color: $colorPrimary;
+    }
+  }
+
   span {
     &:not(:last-child) {
       margin-bottom: 1em;

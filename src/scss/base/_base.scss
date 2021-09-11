@@ -1,4 +1,4 @@
-@import "normalize.scss";
+@import "normalize";
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap");
 
 * {
@@ -11,4 +11,18 @@ a,
 a:visited,
 a:hover {
   text-decoration: none;
+}
+
+button {
+  border: none;
+  text-decoration: none;
+  background-color: transparent;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.text-hl {
+  color: $colorPrimary;
 }

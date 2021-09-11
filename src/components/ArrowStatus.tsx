@@ -4,11 +4,15 @@ function ArrowStatus() {
   return (
     <div className="arrowstatus">
       <span className="arrowstatus__arrow">
-        <AiOutlineArrowUp />
+        <button>
+          <AiOutlineArrowUp />
+        </button>
       </span>
       <span>6</span>
       <span>
-        <AiOutlineArrowDown />
+        <button>
+          <AiOutlineArrowDown />
+        </button>
       </span>
     </div>
   )

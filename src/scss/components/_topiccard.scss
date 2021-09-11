@@ -1,0 +1,16 @@
+.topiccard {
+  width: 100%;
+  margin: 0 2em;
+
+  &__title {
+    font-size: $f3;
+    letter-spacing: 0.1em;
+    font-weight: bolder;
+    margin-bottom: 0.8em;
+  }
+  &__context {
+    font-size: $f6;
+    line-height: 1.5em;
+    margin-bottom: 0.8em;
+  }
+}

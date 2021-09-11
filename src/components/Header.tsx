@@ -10,10 +10,8 @@ function Header() {
         <span></span>
       </div>
       <div className="header__menus hide-for-mobile">
-        <a href="">LOGIN</a>
-        <a href="" className="button button--signup">
-          SIGN UP
-        </a>
+        <button>LOGIN</button>
+        <button className="button button--signup">SIGN UP</button>
       </div>
     </div>
   )

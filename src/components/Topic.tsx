@@ -1,10 +1,12 @@
 import React from "react"
 import ArrowStatus from "./ArrowStatus"
-function Topic() {
+import TopicCard from "./TopicCard"
+
+function Topic(props: any) {
   return (
-    <div className="container--topic">
+    <div className="container container--topic">
       <ArrowStatus />
-      <Topic />
+      <TopicCard props={props} />
     </div>
   )
 }

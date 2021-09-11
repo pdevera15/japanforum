@@ -8,10 +8,11 @@
   }
 
   &__links {
-    a {
+    button {
       display: block;
-      padding: 0.8em 0.8em 0.8em 3em;
-
+      padding: 0.8em 3em 0.8em;
+      width: 100%;
+      text-align: left;
       &:hover {
         color: $colorPrimary;
       }
