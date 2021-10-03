@@ -1,22 +1,16 @@
-import React from "react"
+import React, { useEffect, useState } from "react"
 import Topic from "./Topic"
-import { useQuery, useMutation } from "@apollo/client"
-import { POSTS } from "../graphql/operations"
 
 function TopicList() {
-  const { data, loading } = useQuery(POSTS)
+  const [data, setData] = useState([])
+  const [loading, setLoading] = useState(true)
+  useEffect(() => {
+    fetch("http://localhost:8001/alltopics").then((data) => {
+      console.log(data)
+    })
+  }, [])
 
-  return (
-    <div className="topiclist">
-      {data && !loading ? (
-        data.posts.map((topic: any, index: any) => (
-          <Topic topic={topic} key={index} />
-        ))
-      ) : (
-        <div>LOADING</div>
-      )}
-    </div>
-  )
+  return <div className="topiclist"></div>
 }
 
 export default TopicList
