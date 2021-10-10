@@ -1,0 +1,43 @@
+.logincontainer {
+  min-width: 500px;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 20%);
+  min-height: 500px;
+  display: flex;
+  flex-direction: column;
+  padding: 0 3em;
+
+  h1 {
+    text-align: center;
+  }
+  input[type="text"],
+  input[type="password"] {
+    border: 0.1em solid #d1d1d1;
+    border-radius: 0.4em;
+    padding: 0.6em 1em 0.7em;
+    box-sizing: inherit;
+    margin-bottom: 1.5em;
+    height: 1em;
+  }
+  input:focus {
+    border-color: $colorPrimary;
+    outline: none;
+  }
+  label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+  }
+
+  &__button {
+    background-color: $colorPrimary;
+    border-radius: 0.4em;
+    cursor: pointer;
+    font-weight: 700;
+    color: #fff;
+    font-size: 1em;
+    line-height: 1em;
+    height: 2.5em;
+  }
+}
