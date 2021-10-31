@@ -1,4 +1,5 @@
 import { MyTopics } from "../interfaces"
+import AddTopic from "./AddTopic"
 import ArrowStatus from "./ArrowStatus"
 import TopicCard from "./TopicCard"
 
@@ -11,6 +12,7 @@ function Topic(props: { topics: MyTopics[] }) {
           <TopicCard topic={x} />
         </div>
       ))}
+      <AddTopic />
     </>
   )
 }
