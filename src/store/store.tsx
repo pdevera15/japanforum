@@ -1,15 +1,21 @@
-import { createStore, compose, applyMiddleware } from "redux"
-import { reducers } from "./reducers"
-import { composeWithDevTools } from "redux-devtools-extension"
-import thunk from "redux-thunk"
-const store = createStore(
-  reducers,
-  {},
-  composeWithDevTools(applyMiddleware(thunk))
-)
+import { configureStore } from "@reduxjs/toolkit"
+import { api } from "../api/BackEndApi"
+import { setupListeners } from "@reduxjs/toolkit/query"
+import userReducer from "./features/userSlice"
+import { TypedUseSelectorHook, useSelector, useDispatch } from "react-redux"
 
-export default store
+export const store = configureStore({
+  reducer: {
+    [api.reducerPath]: api.reducer,
+    UserInfo: userReducer,
+  },
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware().concat(api.middleware),
+})
+
+setupListeners(store.dispatch)
 // Infer the `RootState` and `AppDispatch` types from the store itself
 export type RootState = ReturnType<typeof store.getState>
 // Inferred type: {posts: PostsState, comments: CommentsState, users: UsersState}
-export type AppDispatch = typeof store.dispatch
+export const useAppDispatch = typeof store.dispatch
+export const useAppselector: TypedUseSelectorHook<RootState> = useSelector

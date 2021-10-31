@@ -1,13 +1,17 @@
-import React from "react"
+import { MyTopics } from "../interfaces"
 import ArrowStatus from "./ArrowStatus"
 import TopicCard from "./TopicCard"
 
-function Topic(props: any) {
+function Topic(props: { topics: MyTopics[] }) {
   return (
-    <div className="container container--topic">
-      <ArrowStatus />
-      <TopicCard props={props} />
-    </div>
+    <>
+      {props.topics.map((x: any, key: any) => (
+        <div className="container container--topic" key={key}>
+          <ArrowStatus />
+          <TopicCard topic={x} />
+        </div>
+      ))}
+    </>
   )
 }
 

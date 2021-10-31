@@ -1,12 +1,11 @@
-import React from "react"
 import Login from "./Login"
-import { useState } from "react"
-import { useSelector } from "react-redux"
-import { RootState } from "../store/store"
+import { useEffect, useState } from "react"
+import { api } from "../api/BackEndApi"
+import { RootState, useAppselector } from "../store/store"
 
 function Header() {
   const [loginView, setLoginView] = useState(false)
-  const store = useSelector((state: RootState) => state)
+  const userInfo = useAppselector((state: RootState) => state.UserInfo)
 
   const loginViewHandler = () => {
     setLoginView(!loginView)
@@ -20,7 +19,7 @@ function Header() {
         <span></span>
       </div>
       <div className="header__menus hide-for-mobile">
-        {!store.user.username ? (
+        {!userInfo.token ? (
           <>
             <button
               className="header__menus--button"
@@ -34,7 +33,7 @@ function Header() {
             </button>
           </>
         ) : (
-          store.user.username
+          <p>Welcome {userInfo.username}</p>
         )}
       </div>
     </div>

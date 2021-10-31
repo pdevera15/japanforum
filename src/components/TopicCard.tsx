@@ -1,6 +1,6 @@
-import React, { useState } from "react"
+import { MyTopics } from "../interfaces"
 
-function TopicCard({ props }: any) {
+function TopicCard(props: { topic: MyTopics }) {
   return (
     <div className="topiccard">
       <div className="topiccard__title">{props.topic.title}</div>
