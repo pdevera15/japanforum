@@ -1,14 +1,15 @@
 export interface MyTopics {
-  _id?: String
-  title: String
-  context: String
-  date_created?: String
-  date_updated?: String
-  author_id?: String
+  _id?: string
+  title: string
+  context: string
+  date_created?: string
+  date_updated?: string
+  author_id?: string
+  token: string
 }
 
 export interface MyUser {
-  username?: String
-  password?: String
-  token?: String
+  username?: string
+  password?: string
+  token?: string
 }

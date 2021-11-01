@@ -1,15 +1,19 @@
 import React from "react"
+import { api } from "../api/BackEndApi"
 import { addTopicApi } from "../store/api/topicApi"
+import { GetMyUserInfoToken } from "../store/helper"
 
 function AddTopic({ show }: { show: boolean }) {
+  const token = GetMyUserInfoToken()
   const titleref = React.useRef<HTMLInputElement>(null)
   const contextref = React.useRef<HTMLTextAreaElement>(null)
   const showHideClassName = show ? "modal display-block" : "modal display-none"
-  const submitHandler = (e: React.MouseEvent<HTMLElement>) => {
+  const submitHandler = async (e: React.MouseEvent<HTMLElement>) => {
     e.preventDefault()
     const title = titleref.current?.value!
     const context = titleref.current?.value!
-    addTopicApi({ title, context })
+    const addTopicResponse = await addTopicApi({ title, context, token })
+    console.log(addTopicResponse)
   }
   return (
     <div className={showHideClassName}>

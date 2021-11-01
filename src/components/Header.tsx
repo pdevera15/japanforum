@@ -1,6 +1,5 @@
 import Login from "./Login"
-import { useEffect, useState } from "react"
-import { api } from "../api/BackEndApi"
+import { useState } from "react"
 import { RootState, useAppselector } from "../store/store"
 import AddTopic from "./AddTopic"
 
