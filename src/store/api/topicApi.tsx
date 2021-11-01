@@ -1,7 +1,9 @@
 import axios from "axios"
-import { MyUser } from "../../interfaces"
+import { MyTopics } from "../../interfaces"
 
-export const topicApi = (param: MyUser): Promise<MyUser> => {
+export const addTopicApi = (
+  param: MyTopics
+): Promise<{ result: string; message: string }> => {
   return new Promise(async (resolve, reject) => {
     try {
       const res = await axios.post("http://localhost:8001/topics", param)

@@ -12,7 +12,6 @@ function Topic(props: { topics: MyTopics[] }) {
           <TopicCard topic={x} />
         </div>
       ))}
-      <AddTopic />
     </>
   )
 }

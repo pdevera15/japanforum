@@ -577,6 +577,68 @@ button:hover {
   height: 2.5em;
 }
 
+.addtopiccontainer {
+  min-width: 500px;
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translate(-50%, 20%);
+          transform: translate(-50%, 20%);
+  min-height: 500px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 0 3em;
+  background-color: #fff;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.addtopiccontainer input {
+  border: 0.1em solid #d1d1d1;
+  border-radius: 0.4em;
+  padding: 0.6em 1em 0.7em;
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+  margin-bottom: 1.5em;
+  height: 1em;
+}
+
+.addtopiccontainer input:focus {
+  border-color: #3d5bf0;
+  outline: none;
+}
+
+.addtopiccontainer textarea {
+  border: 0.1em solid #d1d1d1;
+  border-radius: 0.4em;
+  padding: 0.6em 1em 0.7em;
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+  margin-bottom: 1.5em;
+}
+
+.addtopiccontainer label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+
+.addtopiccontainer__button {
+  background-color: #3d5bf0;
+  border-radius: 0.4em;
+  cursor: pointer;
+  font-weight: 700;
+  color: #fff;
+  font-size: 1em;
+  line-height: 1em;
+  height: 2.5em;
+}
+
 .button {
   padding: 0.8em;
   border-radius: 2em;
