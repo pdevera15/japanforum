@@ -27,7 +27,7 @@ function Header() {
             >
               LOGIN
             </button>
-            {loginView ? <Login /> : null}
+            <Login show={loginView} />
             <button className="button header__menus--button button--signup">
               SIGN UP
             </button>

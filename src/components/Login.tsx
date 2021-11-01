@@ -4,7 +4,8 @@ import { userLogin } from "../store/features/userSlice"
 import { userLoginApi } from "../store/api/userApi"
 import { RootState, useAppselector } from "../store/store"
 
-function Login() {
+function Login({ show }: { show: boolean }) {
+  const showHideClassName = show ? "modal display-block" : "modal display-none"
   const usernameref = React.useRef<HTMLInputElement>(null)
   const passwordref = React.useRef<HTMLInputElement>(null)
   const userInfo = useAppselector((state: RootState) => state.UserInfo)
@@ -20,28 +21,30 @@ function Login() {
   }
 
   return (
-    <div className="logincontainer">
-      <h1>{userInfo ? <div>Loading</div> : JSON.stringify(userInfo)}</h1>
-      <label htmlFor="username">Username</label>
-      <input
-        name="username"
-        type="text"
-        ref={usernameref}
-        defaultValue="sample_user002"
-      />
-      <label htmlFor="password">Password</label>
-      <input
-        name="password"
-        type="password"
-        ref={passwordref}
-        defaultValue="sample_user002"
-      />
-      <button
-        className="logincontainer__button"
-        onClick={(e) => onSubmitHandler(e)}
-      >
-        LOGIN
-      </button>
+    <div className={showHideClassName}>
+      <div className="logincontainer">
+        <h1>{userInfo ? <div>Loading</div> : JSON.stringify(userInfo)}</h1>
+        <label htmlFor="username">Username</label>
+        <input
+          name="username"
+          type="text"
+          ref={usernameref}
+          defaultValue="sample_user002"
+        />
+        <label htmlFor="password">Password</label>
+        <input
+          name="password"
+          type="password"
+          ref={passwordref}
+          defaultValue="sample_user002"
+        />
+        <button
+          className="logincontainer__button"
+          onClick={(e) => onSubmitHandler(e)}
+        >
+          LOGIN
+        </button>
+      </div>
     </div>
   )
 }
