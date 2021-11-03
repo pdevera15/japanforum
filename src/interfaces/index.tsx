@@ -9,6 +9,7 @@ export interface MyTopics {
 }
 
 export interface MyUser {
+  id?: string
   username?: string
   password?: string
   token?: string
