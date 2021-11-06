@@ -17,7 +17,9 @@ function Header() {
   }
   return (
     <div className="header">
-      <div className="header__logo">LOGO</div>
+      <div className="header__logo">
+        <b>REDDIT CLONE</b>
+      </div>
       <div className="header__hamburger hide-for-desktop">
         <span></span>
         <span></span>
