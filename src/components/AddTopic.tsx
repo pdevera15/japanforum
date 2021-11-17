@@ -3,12 +3,18 @@ import { Redirect } from "react-router-dom"
 import { addTopicApi } from "../store/api/topicApi"
 import { GetMyUserInfo } from "../store/helper"
 
-function AddTopic({ show }: { show: boolean }) {
+type Props = {
+  isDisplay: boolean
+}
+
+function AddTopic(props: Props) {
   const token = GetMyUserInfo().token!
   const author = GetMyUserInfo().id!
   const titleref = React.useRef<HTMLInputElement>(null)
   const contextref = React.useRef<HTMLTextAreaElement>(null)
-  var showHideClassName = show ? "modal display-block" : "modal display-none"
+  var showHideClassName = props.isDisplay
+    ? "modal display-block"
+    : "modal display-none"
   const submitHandler = async (e: React.MouseEvent<HTMLElement>) => {
     e.preventDefault()
     const title = titleref.current?.value!

@@ -34,7 +34,7 @@ function Header() {
             >
               LOGIN
             </button>
-            <Login show={loginView} />
+            <Login isDisplay={loginView} />
             <button className="button header__menus--button button--signup">
               SIGN UP
             </button>
@@ -49,7 +49,7 @@ function Header() {
             >
               Add Topic
             </button>
-            <AddTopic show={addTopicView} />
+            <AddTopic isDisplay={addTopicView} />
           </>
         )}
       </div>

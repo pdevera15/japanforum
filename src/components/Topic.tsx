@@ -1,5 +1,4 @@
 import { MyTopics } from "../interfaces"
-import AddTopic from "./AddTopic"
 import ArrowStatus from "./ArrowStatus"
 import TopicCard from "./TopicCard"
 

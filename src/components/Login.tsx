@@ -4,8 +4,13 @@ import { userLogin } from "../store/features/userSlice"
 import { userLoginApi } from "../store/api/userApi"
 import { RootState, useAppselector } from "../store/store"
 
-function Login({ show }: { show: boolean }) {
-  const showHideClassName = show ? "modal display-block" : "modal display-none"
+type Props = {
+  isDisplay: boolean
+}
+function Login(props: Props) {
+  const showHideClassName = props.isDisplay
+    ? "modal display-block"
+    : "modal display-none"
   const usernameref = React.useRef<HTMLInputElement>(null)
   const passwordref = React.useRef<HTMLInputElement>(null)
   const userInfo = useAppselector((state: RootState) => state.UserInfo)
