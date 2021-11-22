@@ -1,5 +1,5 @@
 import React from "react"
-import { Redirect } from "react-router-dom"
+import { Redirect, useHistory } from "react-router-dom"
 import { addTopicApi } from "../store/api/topicApi"
 import { GetMyUserInfo } from "../store/helper"
 
@@ -8,13 +8,11 @@ type Props = {
 }
 
 function AddTopic(props: Props) {
+  const history = useHistory()
   const token = GetMyUserInfo().token!
   const author = GetMyUserInfo().id!
   const titleref = React.useRef<HTMLInputElement>(null)
   const contextref = React.useRef<HTMLTextAreaElement>(null)
-  var showHideClassName = props.isDisplay
-    ? "modal display-block"
-    : "modal display-none"
   const submitHandler = async (e: React.MouseEvent<HTMLElement>) => {
     e.preventDefault()
     const title = titleref.current?.value!
@@ -26,12 +24,14 @@ function AddTopic(props: Props) {
       author_id: author,
     })
     if (addTopicResponse.result === 1) {
-      console.log("success")
-      return <Redirect to="/post" />
+      console.log("success", addTopicResponse)
+      history.push("/topic")
     }
   }
   return (
-    <div className={showHideClassName}>
+    <div
+      className={props.isDisplay ? "modal display-block" : "modal display-none"}
+    >
       <div className="addtopiccontainer">
         <label htmlFor="title"> Title </label>
         <input type="text" name="title" ref={titleref} /> <br />

@@ -24,7 +24,7 @@
     position: relative;
     color: $colorPrimary;
     font-weight: bold;
-
+    z-index: -999;
     &:before {
       content: "";
       width: 3px;

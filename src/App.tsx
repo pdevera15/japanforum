@@ -1,6 +1,6 @@
 import "./scss/styles.css"
 import Header from "./components/Header"
-import Index from "./pages"
+import Index from "./pages/Index"
 
 function App() {
   return (

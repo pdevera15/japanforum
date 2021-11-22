@@ -6,15 +6,14 @@ import reportWebVitals from "./reportWebVitals"
 import { Provider } from "react-redux"
 import { store } from "./store/store"
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
-import TopicPage from "./components/TopicPage"
+import TopicPage from "./pages/TopicPage"
 
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
       <Router>
         <Switch>
-          <Route exact path="/" component={App} />
-          <Route exact path="/topic" component={TopicPage} />
+          <Route path="/" component={App} />
         </Switch>
       </Router>
     </Provider>
